@@ -1,0 +1,31 @@
+@import '../abstracts/lists';
+@import '../abstracts/variables';
+
+@mixin transform {
+    transform: scale(1.2);
+    transition: all 2s ease;
+}
+
+@mixin flexbox($display, $flex-wrap, $flex-direction, $justify-content) {
+    display: $display;
+    flex-wrap: $flex-wrap;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+}
+
+@mixin title($font-family, $font-weight, $text-align, $text-transform) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    text-align: $text-align;
+    text-transform: $text-transform;
+}
+
+@mixin input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input) {
+    border: $border;
+    border-radius: $border-radius;
+    box-sizing: $box-sizing;
+    margin: $margin;
+    line-height: $line-height;
+    padding: $padding;
+    width: $width-input;
+}

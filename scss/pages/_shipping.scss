@@ -1,0 +1,89 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+@import '../layout/extends';
+
+/* Section - Shipping */
+.container-icons {
+    @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 1));
+    .item-icons {
+        flex-basis: 250px;
+        .icon {
+            display: block;
+            margin: auto;
+            width: 80px;
+            &:hover {
+                @include transform;
+            }
+        }
+        .paragraph-icon {
+            display: block;
+            font-size: nth($font-size ,6);
+            margin-top: 6%;
+            text-align: center;
+        }
+    }
+}
+
+.tarriff {
+    .title-tariff {
+        font-size: nth($font-size ,3);
+    }
+    p {
+        font-size: nth($font-size ,5);
+    }
+    .contacts-form {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        input[type=text] {
+            font-family: $font-family;
+            font-size: nth($font-size ,6);
+            @include input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input);
+        }
+        input[type=submit] { 
+            @extend %submit;
+            &:hover {
+                background-color:  #23489e; 
+            }
+        }
+        #area-code, #addresses, #delivery-number {
+            width: 50%;
+        }
+    }
+}
+
+.container-covid {
+    @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 2));
+    .item-covid {
+        flex-basis: 240px;
+        .icon {
+            display: block;
+            margin: auto;
+            width: 80px;
+            &:hover {
+                @include transform;
+            }
+        }
+        .paragraph-icon {
+            display: block;
+            font-size: nth($font-size ,6);
+            margin-top: 6%;
+            text-align: center;
+        }
+    }
+}
+
+.paragraph {
+    font-size: nth($font-size ,5);
+    margin-top: 3%;
+}
+
+.container-paragraph {
+    @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 4));
+    .paragraph-shipping {
+        font-family: $font-family;
+        font-size: nth($font-size ,4);
+        flex-basis: 600px;
+    }
+}
+/* End Section - Shipping */

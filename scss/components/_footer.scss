@@ -1,0 +1,54 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/lists';
+/* Section - Footer */
+footer {
+    .container-footer {
+        background-image: $color-header-footer;
+        @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 3));
+        a {
+            .logo {
+                height: 100px;
+                padding: 4%;
+                width: 125px;
+            }
+        }
+        .item-footer {
+            align-items: center;
+            @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 1));
+            .paragraph-footer {
+                align-items: center;
+                color: white;
+                display: flex;
+                font-size: nth($font-size ,6);
+                font-family: $font-family;
+            }
+        }
+        nav {
+            align-items: center;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 2%;
+            li {
+                display: inline-block;
+                position: relative;
+                a {
+                    background-image: none;
+                    padding: 10px 15px;
+                    display: block;
+                    img {
+                        height: 37px;
+                        width: 37px;
+                    }
+                }
+                .footer-list {
+                    width: 50%;
+                    &:hover {
+                        @include transform;
+                    }
+                }
+            }
+        }
+    }
+}
+/* End Section - Footer */

@@ -1,0 +1,81 @@
+@import '../abstracts/variables';
+/* Header */
+.container-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    .navbar {
+        padding: unset;
+        .container-fluid {
+            a {
+                .logo {
+                    height: 100px;
+                    padding: 4%;
+                    width: 125px;
+                }
+            }
+            .navbar-toggler {
+                border-color: white;
+                margin: 3%;
+                .navbar-toggler-icon {
+                    height: 2em;
+                    width: 2em;
+                }
+            }
+            .navbar-collapse {
+                flex-grow: unset;
+                .navbar-nav {
+                    padding: unset;
+                    color: #82baeb;
+                    color: rgb(255, 255, 255);
+                    li {
+                        list-style: none;
+                        &:hover > ul {
+                            display: block;
+                        }
+                        a {
+                            background-image: linear-gradient(to right,hsl(222deg 79% 28%), #0b2e80);
+                            font-family: $font-family;
+                            font-size: nth($font-size ,5);
+                            text-align: center;
+                            width: 120px;
+                        }
+                        .nav-link {
+                            padding: unset;
+                            color: rgb(255, 255, 255);
+                            &:focus, &:hover {
+                                color: #82baeb;
+                            }
+                        }    
+                        .dropdown-menu {
+                            background-color: unset;
+                            li {
+                                .dropdown-item {
+                                    color: white;
+                                    width: auto;
+                                    text-align: start;
+                                    &:focus, &:hover {
+                                        color: #82baeb;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .custom-toggler.navbar-toggler {
+                border-color: white;
+                margin: 3%;
+            }
+            .custom-toggler .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+            }  
+        }    
+    }
+    .bg-light {
+        background-image: $color-header-footer;
+    }
+}
+/* End Header */

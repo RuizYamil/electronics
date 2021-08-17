@@ -1,0 +1,100 @@
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+@import '../abstracts/lists';
+/* Section - Card */
+.container-cards {
+    @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 2));
+    .card {
+        align-content: stretch;
+        border: 2px solid black;
+        border-radius: 25px;
+        box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-basis: 300px;
+        flex-direction: column;
+        height: 400px;
+        .title-icon {
+            align-items: center;
+            display: flex;
+            button {
+                border-radius: 25px;
+                .icon-question {
+                    width: 37px;
+                }
+            }
+        }
+        .rating {
+            display: block;
+            margin: auto;
+            width: 80px;
+        }
+        .product-img {
+            display: block;
+            margin: auto;
+            width: 40%;
+        }
+        .simple-price {
+            display: block;
+            font-size: nth($font-size ,5);
+            margin: auto;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            text-align: center;
+        }
+        .paragraph-price {
+            display: flex;
+            justify-content: center;
+            margin: 5% 0;
+            .discount {
+                text-decoration: line-through;
+            }
+            .price {
+                display: flex;
+                font-size: nth($font-size ,5);
+                margin-right: 5%;
+                text-align: center;
+            }
+            select {
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: nth($font-size ,6);
+                padding: 4px;
+            }
+        }
+        .btn-add-to-cart {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8%;
+            button {
+                background-color: #05297f;
+                border-radius: 15px;
+                color: white;
+                font-size: nth($font-size ,6);
+                font-weight: bold;
+                height: 50px;
+                width: 190px;
+                &:hover {
+                    background-color: #23489e;
+                }
+            }
+        }
+    }
+}
+
+
+// Modal
+#staticBackdrop {
+    .modal-dialog {
+        .modal-content {
+            .modal-body {
+                .paragraph-modal {
+                    font-size: nth($font-size ,7);
+                    font-family: $font-family;
+                }
+            }
+        }
+    }
+}
+// End Modal
+/* End Section - Card */

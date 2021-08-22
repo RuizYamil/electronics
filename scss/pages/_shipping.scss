@@ -11,6 +11,7 @@
             display: block;
             margin: auto;
             width: 80px;
+            height: 80px;
             &:hover {
                 @include transform;
             }
@@ -60,6 +61,7 @@
             display: block;
             margin: auto;
             width: 80px;
+            height: 80px;
             &:hover {
                 @include transform;
             }

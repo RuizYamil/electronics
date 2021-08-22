@@ -155,6 +155,7 @@ h4 {
 /* Home */
 .photo-principale {
   width: 100%;
+  height: 100%;
 }
 
 /* End Home */
@@ -179,6 +180,7 @@ h4 {
   display: block;
   margin: auto;
   width: 80px;
+  height: 80px;
 }
 .container-paragraph .item-see-more .paragraph-see-more {
   font-family: Arial, Helvetica, sans-serif;
@@ -204,6 +206,8 @@ h4 {
 #about-us .logo-about-us {
   display: block;
   margin: 3% auto;
+  height: 100%;
+  width: auto;
 }
 
 /* End About us */
@@ -236,6 +240,7 @@ h4 {
   display: block;
   margin: auto;
   width: 80px;
+  height: 80px;
 }
 .container-icons .item-icons .icon:hover {
   transform: scale(1.2);
@@ -290,6 +295,7 @@ h4 {
   display: block;
   margin: auto;
   width: 80px;
+  height: 80px;
 }
 .container-covid .item-covid .icon:hover {
   transform: scale(1.2);
@@ -444,6 +450,7 @@ h4 {
 /* Products */
 video {
   width: 100%;
+  height: 100%;
 }
 
 /* End Products */
@@ -478,11 +485,13 @@ video {
   display: block;
   margin: auto;
   width: 80px;
+  height: 80px;
 }
 .container-cards .card .product-img {
   display: block;
   margin: auto;
   width: 40%;
+  height: 30%;
 }
 .container-cards .card .simple-price {
   display: block;

@@ -187,6 +187,7 @@ h4 {
   font-size: 2rem;
 }
 .container-paragraph .item-see-more .btn-see-more {
+  color: #094bab;
   display: flex;
   font-size: 2rem;
   justify-content: center;
@@ -198,7 +199,7 @@ h4 {
   color: #1138f7;
 }
 .container-paragraph .item-see-more .btn-see-more:active {
-  color: #7368cf;
+  color: #4e478d;
 }
 
 /* Section - Our Clients */
@@ -251,6 +252,14 @@ h4 {
   font-size: 2rem;
   margin-top: 6%;
   text-align: center;
+}
+.container-icons .item-icons .paragraph-title {
+  font-size: 2rem;
+  margin-top: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .tarriff .title-tariff {
@@ -479,6 +488,7 @@ video {
   border-radius: 25px;
 }
 .container-cards .card .title-icon button .icon-question {
+  height: 37px;
   width: 37px;
 }
 .container-cards .card .rating {
@@ -590,6 +600,7 @@ video {
 #contacts .container-contacts .img-contacts {
   position: relative;
   width: 50%;
+  height: 100%;
 }
 #contacts .container-contacts .img-contacts img {
   height: 100%;
@@ -599,6 +610,7 @@ video {
   color: #ff5c17;
   position: absolute;
   top: 1%;
+  height: 100%;
   width: 100%;
   display: block;
 }

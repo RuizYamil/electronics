@@ -12,6 +12,7 @@
         .img-contacts {
             position: relative;
             width: 50%;
+            height: 100%;
             img {
                 height: 100%;
                 width: 100%;
@@ -20,6 +21,7 @@
                 color: rgb(255 92 23);
                 position: absolute;
                 top: 1%;
+                height: 100%;
                 width: 100%;
                 display: block;
             }

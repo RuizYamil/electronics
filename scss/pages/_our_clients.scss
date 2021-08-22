@@ -21,6 +21,7 @@
             font-size: nth($font-size ,6);
         }
         .btn-see-more {
+            color: #094bab;
             display: flex;
             font-size: nth($font-size ,6);
             justify-content: center;
@@ -31,7 +32,7 @@
                 color:#1138f7;
             }
             &:active {
-                color: rgb(115, 104, 207);
+                color:#4e478d;
             }
         }
     }

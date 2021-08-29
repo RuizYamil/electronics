@@ -26,28 +26,26 @@
         }
         .rating {
             display: block;
-            margin: auto;
+            margin: nth($margin, 1);
             width: 80px;
             height: 80px;
         }
         .product-img {
             display: block;
-            margin: auto;
+            margin: nth($margin, 1);
             width: 40%;
             height: 30%;
         }
         .simple-price {
             display: block;
             font-size: nth($font-size ,5);
-            margin: auto;
-            margin-bottom: 5%;
-            margin-top: 5%;
+            margin: nth($margin, 6);
             text-align: center;
         }
         .paragraph-price {
             display: flex;
             justify-content: center;
-            margin: 5% 0;
+            margin: nth($margin, 6);
             .discount {
                 text-decoration: line-through;
             }
@@ -69,6 +67,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 8%;
+
             button {
                 background-color: #05297f;
                 border-radius: 15px;

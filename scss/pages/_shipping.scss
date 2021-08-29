@@ -1,6 +1,7 @@
 @import '../abstracts/mixins';
 @import '../abstracts/variables';
 @import '../layout/extends';
+@import '../abstracts/lists';
 
 /* Section - Shipping */
 .container-icons {
@@ -9,7 +10,7 @@
         flex-basis: 250px;
         .icon {
             display: block;
-            margin: auto;
+            margin: nth($margin, 1);
             width: 80px;
             height: 80px;
             &:hover {
@@ -19,12 +20,11 @@
         .paragraph-icon {
             display: block;
             font-size: nth($font-size ,6);
-            margin-top: 6%;
             text-align: center;
         }
         .paragraph-title {
             font-size: 2rem;
-            margin-top: 5%;
+            margin-top: 3%;
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             text-align: center;
@@ -36,6 +36,7 @@
 .tarriff {
     .title-tariff {
         font-size: nth($font-size ,3);
+        margin: nth($margin, 3);
     }
     p {
         font-size: nth($font-size ,5);
@@ -57,6 +58,7 @@
         }
         #area-code, #addresses, #delivery-number {
             width: 50%;
+            margin: nth($margin, 3);
         }
     }
 }
@@ -67,7 +69,7 @@
         flex-basis: 240px;
         .icon {
             display: block;
-            margin: auto;
+            margin: nth($margin, 1);
             width: 80px;
             height: 80px;
             &:hover {

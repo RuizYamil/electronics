@@ -1,11 +1,13 @@
+@import '../abstracts/lists';
+
 /* Media query */
 /* Mobile */
 @media only screen and (max-width: 480px) {
-    .container-footer {
-        justify-content: unset;
-    }
+    // .container-footer {
+    //     justify-content: unset;
+    // }
 
-    h1, h2 {
+    h1,h2 {
         font-size: xxx-large;
     }
 
@@ -13,30 +15,66 @@
         justify-content: center;
     }
 
-    .img-contacts h2 {
-        font-size: nth($font-size ,5);
+    .card {
+        margin: nth($margin, 4);
     }
 
-    .card {
+    iframe {
+        height: 100%;
+        width: 100%;
         margin: 2%;
     }
 
-    .item-footer {
-        margin: auto;
+    .tarriff {
+        .contacts-form {
+            #area-code, #addresses, #delivery-number {
+                width: 80%;
+            }
+        }
+        .paragraph {
+            margin: nth($margin, 3);
+        }
     }
 
-    .container-footer nav {
-        margin: auto;
+    #contacts {
+        .container-contacts {
+            .img-contacts {
+                height: 100%;
+                width: 100%;
+                h2 {
+                    font-size: nth($font-size ,5);
+                }
+            }
+            .contacts-form {
+                margin: nth($margin, 3);
+            }
+        }
+    }    
+
+
+    footer {
+        .container-footer {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            .item-footer {
+                margin: nth($margin, 1);
+                .paragraph-footer {
+                    font-size: 1.5rem;
+                    margin: nth($margin, 2);
+                }
+            }
+        }        
+    }
+
+    .paragraph-shipping, .paragraph-see-more {
+        margin: nth($margin, 3);
     }
 }
 /* End Mobile */
 
 /* Tablet */
 @media only screen and (min-width: 481px) and (max-width: 1078px) {
-    .container-footer {
-        justify-content: unset;
-    }
-
     h1, h2 {
         font-size: xxx-large;
     }
@@ -46,12 +84,27 @@
     }
 
     .card {
-        margin: 2%;
+        margin: nth($margin, 4);
         width: 100%;
     }
 
-    .item-footer {
-        margin: auto;
+    iframe {
+        height: 100%;
+        width: 100%;
+        margin: 2%;
+    }
+
+    footer {
+        .container-footer {
+            background-color: green;
+            justify-content: unset;
+            .item-footer {
+                margin: nth($margin, 1);
+            }            
+            nav {
+                justify-content: center; 
+            }        
+        }        
     }
 }
 /* End Tablet */

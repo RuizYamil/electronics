@@ -1,12 +1,10 @@
 @import '../abstracts/variables';
+@import '../abstracts/lists';
+
 /* Reset */
 * {
-    margin: 0;
+    margin: nth($margin, 2);
     padding: 0;
-}
-
-*, ::after, ::before {
-    box-sizing: unset;
 }
 
 body {

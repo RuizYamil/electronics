@@ -1,3 +1,5 @@
+@import '../abstracts/lists';
+
 /* Section - Our Clients */
 .title-our-clients {
     font-size: nth($font-size ,2);
@@ -12,7 +14,7 @@
         }
         .rating {
             display: block;
-            margin: auto;
+            margin: nth($margin, 1);
             width: 80px;
             height: 80px;
         }

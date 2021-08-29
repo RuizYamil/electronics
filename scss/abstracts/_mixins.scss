@@ -24,7 +24,7 @@
     border: $border;
     border-radius: $border-radius;
     box-sizing: $box-sizing;
-    margin: $margin;
+    margin: nth($margin, 4);
     line-height: $line-height;
     padding: $padding;
     width: $width-input;

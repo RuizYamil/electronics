@@ -327,7 +327,7 @@ h4 {
 }
 .container-paragraph .paragraph-shipping {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   flex-basis: 600px;
 }
 
@@ -725,8 +725,21 @@ footer .container-footer nav li .footer-list:hover {
 /* Media query */
 /* Mobile */
 @media only screen and (max-width: 480px) {
-  h1, h2 {
-    font-size: xxx-large;
+  h1 {
+    font-size: xx-large;
+    word-break: break-all;
+  }
+
+  h2, h3, .title-our-clients {
+    font-size: xx-large;
+  }
+
+  .paragraph {
+    font-size: large;
+  }
+
+  .paragraph-title {
+    word-break: break-all;
   }
 
   .contacts {
@@ -743,11 +756,18 @@ footer .container-footer nav li .footer-list:hover {
     margin: 2%;
   }
 
+  .tarriff .title-tariff {
+    font-size: xx-large;
+  }
+  .tarriff .container-covid .item-covid .paragraph-icon {
+    font-size: large;
+  }
   .tarriff .contacts-form #area-code, .tarriff .contacts-form #addresses, .tarriff .contacts-form #delivery-number {
     width: 80%;
   }
   .tarriff .paragraph {
     margin: 1%;
+    font-size: large;
   }
 
   #contacts .container-contacts .img-contacts {
@@ -755,10 +775,13 @@ footer .container-footer nav li .footer-list:hover {
     width: 100%;
   }
   #contacts .container-contacts .img-contacts h2 {
-    font-size: 2.5rem;
+    font-size: calc(2.5em + 1vw);
   }
-  #contacts .container-contacts .contacts-form {
+  #contacts .container-contacts .container-form .contacts-form {
     margin: 1%;
+  }
+  #contacts .container-contacts .container-form .contacts-form input[type=text], #contacts .container-contacts .container-form .contacts-form input[type=email], #contacts .container-contacts .container-form .contacts-form input[type=tel], #contacts .container-contacts .container-form .contacts-form input[type=tel], #contacts .container-contacts .container-form .contacts-form textarea {
+    width: 90%;
   }
 
   footer .container-footer {
@@ -774,19 +797,40 @@ footer .container-footer nav li .footer-list:hover {
     margin: 0;
   }
 
-  .paragraph-shipping, .paragraph-see-more {
+  .container-icons .item-icons .paragraph-title {
+    font-size: large;
+  }
+  .container-icons .item-icons .paragraph-icon {
+    font-size: large;
+  }
+
+  .container-paragraph .paragraph-shipping {
+    font-size: large;
     margin: 1%;
+  }
+  .container-paragraph .item-see-more .paragraph-see-more {
+    margin: 1%;
+    font-size: large;
   }
 }
 /* End Mobile */
 /* Tablet */
 @media only screen and (min-width: 481px) and (max-width: 1078px) {
-  h1, h2 {
+  h1 {
+    font-size: xxx-large;
+    word-break: break-all;
+  }
+
+  h2, .title-our-clients {
     font-size: xxx-large;
   }
 
   .contacts {
     justify-content: center;
+  }
+
+  #contacts .container-contacts .img-contacts h2 {
+    font-size: calc(3em + 1vw);
   }
 
   .card {

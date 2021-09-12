@@ -33,32 +33,46 @@
                 align-items: center;
                 display: flex;
                 flex-direction: column;
-                input[type=text] {
-                    font-family: $font-family;
-                    font-size: nth($font-size ,6);
-                    @include input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input);
-                }
-                input[type=email] {
-                    font-family: $font-family;
-                    font-size: nth($font-size ,6);
-                    @include input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input);
-                }
-                input[type=tel] {
-                    font-family: $font-family;
-                    font-size: nth($font-size ,6);
-                    @include input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input);
-                }
-                textarea {
-                    font-family: $font-family;
-                    font-size: nth($font-size ,6);
-                    @include input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input);
+                .form-group {
+                    width: 100%;
+                    margin: nth($margin, 4);
+                    .icon-form {
+                        position: absolute;
+                        margin: 12px 10px;
+                        height:25px; 
+                        width:25px;
+                    }
+                    input[type=text] {
+                        font-family: $font-family;
+                        font-size: nth($font-size ,6);
+                        @include input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input);
+                        padding-left: 15%;
+                    }
+                    input[type=email] {
+                        font-family: $font-family;
+                        font-size: nth($font-size ,6);
+                        @include input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input);
+                        padding-left: 15%;
+                    }
+                    input[type=tel] {
+                        font-family: $font-family;
+                        font-size: nth($font-size ,6);
+                        @include input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input);
+                        padding-left: 15%;
+                    }
+                    textarea {
+                        font-family: $font-family;
+                        font-size: nth($font-size ,6);
+                        @include input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input);
+                        padding-left: 15%;
+                    }           
                 }
                 input[type=submit] { 
                     @extend %submit;
                     &:hover {
                         background-color:  #23489e; 
                     }
-                }
+                }   
             }
         }
     }

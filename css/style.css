@@ -154,6 +154,18 @@ h4 {
   height: 100%;
 }
 
+.container-paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.container-paragraph .paragraph-shipping {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  flex-basis: 600px;
+}
+
 /* End Home */
 /* Section - Our Clients */
 .title-our-clients {
@@ -275,7 +287,6 @@ h4 {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin: 2%;
   line-height: normal;
   padding: 12px 20px;
   width: 100%;
@@ -288,47 +299,34 @@ h4 {
   margin: 1%;
 }
 
-.container-covid {
+.symptoms .container-covid {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
 }
-.container-covid .item-covid {
+.symptoms .container-covid .item-covid {
   flex-basis: 240px;
 }
-.container-covid .item-covid .icon {
+.symptoms .container-covid .item-covid .icon {
   display: block;
   margin: auto;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 90px;
 }
-.container-covid .item-covid .icon:hover {
+.symptoms .container-covid .item-covid .icon:hover {
   transform: scale(1.2);
   transition: all 2s ease;
 }
-.container-covid .item-covid .paragraph-icon {
+.symptoms .container-covid .item-covid .paragraph-icon {
   display: block;
   font-size: 2rem;
   margin-top: 6%;
   text-align: center;
 }
-
-.paragraph {
+.symptoms .paragraph {
   font-size: 2.5rem;
   margin-top: 3%;
-}
-
-.container-paragraph {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.container-paragraph .paragraph-shipping {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2.5rem;
-  flex-basis: 600px;
 }
 
 /* End Section - Shipping */
@@ -618,49 +616,59 @@ video {
   display: flex;
   flex-direction: column;
 }
-#contacts .container-contacts .container-form .contacts-form input[type=text] {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 2%;
-  line-height: normal;
-  padding: 12px 20px;
+#contacts .container-contacts .container-form .contacts-form .form-group {
   width: 100%;
+  margin: 2%;
 }
-#contacts .container-contacts .container-form .contacts-form input[type=email] {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 2%;
-  line-height: normal;
-  padding: 12px 20px;
-  width: 100%;
+#contacts .container-contacts .container-form .contacts-form .form-group .icon-form {
+  position: absolute;
+  margin: 12px 10px;
+  height: 25px;
+  width: 25px;
 }
-#contacts .container-contacts .container-form .contacts-form input[type=tel] {
+#contacts .container-contacts .container-form .contacts-form .form-group input[type=text] {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin: 2%;
   line-height: normal;
   padding: 12px 20px;
   width: 100%;
+  padding-left: 15%;
 }
-#contacts .container-contacts .container-form .contacts-form textarea {
+#contacts .container-contacts .container-form .contacts-form .form-group input[type=email] {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin: 2%;
   line-height: normal;
   padding: 12px 20px;
   width: 100%;
+  padding-left: 15%;
+}
+#contacts .container-contacts .container-form .contacts-form .form-group input[type=tel] {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: normal;
+  padding: 12px 20px;
+  width: 100%;
+  padding-left: 15%;
+}
+#contacts .container-contacts .container-form .contacts-form .form-group textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: normal;
+  padding: 12px 20px;
+  width: 100%;
+  padding-left: 15%;
 }
 #contacts .container-contacts .container-form .contacts-form input[type=submit]:hover {
   background-color: #23489e;
@@ -722,52 +730,99 @@ footer .container-footer nav li .footer-list:hover {
 }
 
 /* End Section - Footer */
-/* Media query */
-/* Mobile */
+/* Media query - Mobile */
 @media only screen and (max-width: 480px) {
   h1 {
-    font-size: xx-large;
-    word-break: break-all;
+    font-size: 2.9rem;
   }
 
-  h2, h3, .title-our-clients {
-    font-size: xx-large;
+  h2, .title-our-clients {
+    font-size: 2.5rem;
   }
 
-  .paragraph {
-    font-size: large;
+  .container-header .navbar .container-fluid .navbar-collapse .navbar-nav li .nav-link {
+    width: 100%;
   }
 
-  .paragraph-title {
-    word-break: break-all;
-  }
-
-  .contacts {
-    justify-content: center;
-  }
-
-  .card {
-    margin: 2%;
-  }
-
-  iframe {
+  .container-paragraph iframe {
     height: 100%;
     width: 100%;
     margin: 2%;
   }
+  .container-paragraph .paragraph-shipping {
+    font-size: 1.9rem;
+    margin: 0 4%;
+  }
+  .container-paragraph .item-see-more .paragraph-see-more {
+    font-size: 1.9rem;
+    margin: 0 4%;
+  }
+
+  .container-cards .card {
+    margin: 2%;
+    flex-basis: 230px;
+    height: 300px;
+  }
+  .container-cards .card .rating {
+    width: 60px;
+    height: 60px;
+  }
+  .container-cards .card .product-img {
+    width: 35%;
+    height: 25%;
+  }
+  .container-cards .card h3 {
+    font-size: 2.1rem;
+    font-weight: bold;
+  }
+  .container-cards .card .paragraph-price .price {
+    font-size: 1.9rem;
+  }
+  .container-cards .card .btn-add-to-cart button {
+    font-size: 1.5rem;
+  }
+
+  .container-icons .item-icons .icon {
+    width: 60px;
+    height: 60px;
+  }
+  .container-icons .item-icons .paragraph-title {
+    font-size: 1.9rem;
+  }
+  .container-icons .item-icons .paragraph-icon {
+    font-size: 1.7rem;
+  }
 
   .tarriff .title-tariff {
-    font-size: xx-large;
-  }
-  .tarriff .container-covid .item-covid .paragraph-icon {
-    font-size: large;
+    font-size: 2.4rem;
   }
   .tarriff .contacts-form #area-code, .tarriff .contacts-form #addresses, .tarriff .contacts-form #delivery-number {
     width: 80%;
   }
   .tarriff .paragraph {
+    font-size: 1.9rem;
+    margin: 0 4%;
+  }
+
+  .symptoms .container-covid .item-covid {
+    flex-basis: 190px;
     margin: 1%;
-    font-size: large;
+  }
+  .symptoms .container-covid .item-covid .icon {
+    width: 80px;
+    height: 70px;
+  }
+  .symptoms .container-covid .item-covid .paragraph-icon {
+    font-size: 1.7rem;
+  }
+  .symptoms .paragraph {
+    font-size: 1.9rem;
+    margin: 0 4%;
+  }
+
+  .paragraph {
+    font-size: 1.9rem;
+    margin: 0 4%;
   }
 
   #contacts .container-contacts .img-contacts {
@@ -778,10 +833,10 @@ footer .container-footer nav li .footer-list:hover {
     font-size: calc(2.5em + 1vw);
   }
   #contacts .container-contacts .container-form .contacts-form {
-    margin: 1%;
+    margin: 2%;
   }
-  #contacts .container-contacts .container-form .contacts-form input[type=text], #contacts .container-contacts .container-form .contacts-form input[type=email], #contacts .container-contacts .container-form .contacts-form input[type=tel], #contacts .container-contacts .container-form .contacts-form input[type=tel], #contacts .container-contacts .container-form .contacts-form textarea {
-    width: 90%;
+  #contacts .container-contacts .container-form .contacts-form .form-group input[type=text], #contacts .container-contacts .container-form .contacts-form .form-group input[type=email], #contacts .container-contacts .container-form .contacts-form .form-group input[type=tel], #contacts .container-contacts .container-form .contacts-form .form-group input[type=tel], #contacts .container-contacts .container-form .contacts-form .form-group textarea {
+    padding-left: 20%;
   }
 
   footer .container-footer {
@@ -796,52 +851,49 @@ footer .container-footer nav li .footer-list:hover {
     font-size: 1.5rem;
     margin: 0;
   }
-
-  .container-icons .item-icons .paragraph-title {
-    font-size: large;
-  }
-  .container-icons .item-icons .paragraph-icon {
-    font-size: large;
-  }
-
-  .container-paragraph .paragraph-shipping {
-    font-size: large;
-    margin: 1%;
-  }
-  .container-paragraph .item-see-more .paragraph-see-more {
-    margin: 1%;
-    font-size: large;
-  }
 }
-/* End Mobile */
-/* Tablet */
+/* End Media query - Mobile */
+/* Media query - Tablet */
 @media only screen and (min-width: 481px) and (max-width: 1078px) {
   h1 {
-    font-size: xxx-large;
-    word-break: break-all;
+    font-size: 6rem;
   }
 
   h2, .title-our-clients {
-    font-size: xxx-large;
+    font-size: 4.5rem;
   }
 
-  .contacts {
-    justify-content: center;
+  .container-header .navbar .container-fluid .navbar-collapse {
+    margin: 0 6%;
+    justify-content: right;
   }
-
-  #contacts .container-contacts .img-contacts h2 {
-    font-size: calc(3em + 1vw);
+  .container-header .navbar .container-fluid .navbar-collapse .navbar-nav li {
+    margin: 0 1%;
   }
-
-  .card {
-    margin: 2%;
+  .container-header .navbar .container-fluid .navbar-collapse .navbar-nav li .nav-link {
     width: 100%;
   }
 
-  iframe {
+  .container-paragraph iframe {
     height: 100%;
     width: 100%;
     margin: 2%;
+  }
+  .container-paragraph .paragraph-shipping {
+    flex-basis: 100%;
+    margin: 0 3%;
+  }
+
+  .container-cards .card {
+    margin: 2%;
+  }
+
+  #contacts .container-contacts .img-contacts .img-contacts {
+    height: 100%;
+    width: 100%;
+  }
+  #contacts .container-contacts .img-contacts h2 {
+    font-size: calc(3em + 1vw);
   }
 
   footer .container-footer {
@@ -855,7 +907,6 @@ footer .container-footer nav li .footer-list:hover {
     justify-content: center;
   }
 }
-/* End Tablet */
-/* End Media query */
+/* End Media query - Tablet */
 
 /*# sourceMappingURL=style.css.map */

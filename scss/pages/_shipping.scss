@@ -48,7 +48,7 @@
         input[type=text] {
             font-family: $font-family;
             font-size: nth($font-size ,6);
-            @include input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input);
+            @include input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input);
         }
         input[type=submit] { 
             @extend %submit;
@@ -63,39 +63,32 @@
     }
 }
 
-.container-covid {
-    @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 2));
-    .item-covid {
-        flex-basis: 240px;
-        .icon {
-            display: block;
-            margin: nth($margin, 1);
-            width: 80px;
-            height: 80px;
-            &:hover {
-                @include transform;
+.symptoms {
+    .container-covid {
+        @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 2));
+        .item-covid {
+            flex-basis: 240px;
+            .icon {
+                display: block;
+                margin: nth($margin, 1);
+                width: 100px;
+                height: 90px;
+                &:hover {
+                    @include transform;
+                }
+            }
+            .paragraph-icon {
+                display: block;
+                font-size: nth($font-size ,6);
+                margin-top: 6%;
+                text-align: center;
             }
         }
-        .paragraph-icon {
-            display: block;
-            font-size: nth($font-size ,6);
-            margin-top: 6%;
-            text-align: center;
-        }
     }
-}
-
-.paragraph {
-    font-size: nth($font-size ,5);
-    margin-top: 3%;
-}
-
-.container-paragraph {
-    @include flexbox($display, $flex-wrap, $flex-direction, nth($justify-content, 4));
-    .paragraph-shipping {
-        font-family: $font-family;
+    
+    .paragraph {
         font-size: nth($font-size ,5);
-        flex-basis: 600px;
+        margin-top: 3%;
     }
 }
 /* End Section - Shipping */

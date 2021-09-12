@@ -1,58 +1,95 @@
 @import '../abstracts/lists';
 
-/* Media query */
-/* Mobile */
+/* Media query - Mobile */
 @media only screen and (max-width: 480px) {
     h1 {
-        font-size: xx-large;
-        word-break: break-all;
-        // font-size: calc(2.5em + 1vw)
+        font-size: 2.9rem;
     }
 
-    h2,h3, .title-our-clients {
-        font-size: xx-large;
+    h2, .title-our-clients {
+        font-size: nth($font-size, 5);
     }
 
-    .paragraph {
-        font-size: large;
+    .container-header {
+        .navbar {
+            .container-fluid {
+                .navbar-collapse {
+                    .navbar-nav li {
+                        .nav-link {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    .paragraph-title {
-        word-break: break-all;
-        // font-size: calc(1em + 1vw)
+    .container-paragraph {
+        iframe {
+            height: 100%;
+            width: 100%;
+            margin: nth($margin, 4);
+        }
+        .paragraph-shipping {
+            font-size: 1.9rem;
+            margin: 0 4%;
+        }
+        .item-see-more {
+            .paragraph-see-more {
+                font-size: 1.9rem;
+                margin: 0 4%;
+            }
+        }
     }
 
-    .contacts {
-        justify-content: center;
+    .container-cards {
+        .card {
+            margin: nth($margin, 4);
+            flex-basis: 230px;
+            height: 300px;
+            .rating {
+                width: 60px;
+                height: 60px;
+            }
+            .product-img {
+                width: 35%;
+                height: 25%;
+            }
+            h3 {
+                font-size: 2.1rem;
+                font-weight: bold;
+            }
+            .paragraph-price {
+                .price {
+                    font-size: 1.9rem;
+                }
+            }
+            .btn-add-to-cart {
+                button {
+                    font-size: nth($font-size, 7);
+                }
+            }
+        }
     }
 
-    .card {
-        margin: nth($margin, 4);
-    }
-
-    iframe {
-        height: 100%;
-        width: 100%;
-        margin: 2%;
-    }
-
-    // #about-us {
-    //     .logo-about-us {
-    //         height: 50%;
-    //         width: 50%;
-    //     }
-    // }
+    .container-icons {
+        .item-icons {
+            .icon {
+                width: 60px;
+                height: 60px;
+            }
+            .paragraph-title {
+                font-size: 1.9rem;
+            }
+            .paragraph-icon {
+                font-size: 1.7rem;
+            }
+        }
+    } 
 
     .tarriff {
         .title-tariff {
-            font-size: xx-large;
-        }
-        .container-covid {
-            .item-covid {
-                .paragraph-icon {
-                    font-size: large;
-                }
-            }
+            font-size: 2.4rem;
         }
         .contacts-form {
             #area-code, #addresses, #delivery-number {
@@ -60,9 +97,34 @@
             }
         }
         .paragraph {
-            margin: nth($margin, 3);
-            font-size: large;
+            font-size: 1.9rem;
+            margin: 0 4%;
         }
+    }
+
+    .symptoms {
+        .container-covid {
+            .item-covid {
+                flex-basis: 190px;
+                margin: nth($margin, 3);
+                .icon {
+                    width: 80px;
+                    height: 70px;
+                }
+                .paragraph-icon {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+        .paragraph {
+            font-size: 1.9rem;
+            margin: 0 4%;
+        }
+    }
+
+    .paragraph {
+        font-size: 1.9rem;
+        margin: 0 4%;
     }
 
     #contacts {
@@ -71,23 +133,21 @@
                 height: 100%;
                 width: 100%;
                 h2 {
-                    // font-size: nth($font-size ,5);
-                    // font-size: xx-large;
-                    // word-break: break-all;
                     font-size: calc(2.5em + 1vw)
                 }
             }
             .container-form {
                 .contacts-form {
-                    margin: nth($margin, 3);
-                    input[type=text], input[type=email], input[type=tel], input[type=tel], textarea {
-                        width: 90%;
+                    margin: nth($margin, 4);
+                    .form-group {
+                        input[type=text], input[type=email], input[type=tel], input[type=tel], textarea {
+                            padding-left: 20%;
+                        }
                     }
                 }
             }
         }
     }    
-
 
     footer {
         .container-footer {
@@ -97,77 +157,73 @@
             .item-footer {
                 margin: nth($margin, 1);
                 .paragraph-footer {
-                    font-size: 1.5rem;
+                    font-size: nth($font-size, 7);
                     margin: nth($margin, 2);
                 }
             }
         }        
     }
-
-
-    .container-icons {
-        .item-icons {
-            .paragraph-title {
-                font-size: large;
-            }
-            .paragraph-icon {
-                font-size: large;
-            }
-        }
-    } 
-
-    .container-paragraph {
-        .paragraph-shipping {
-            font-size: large;
-            margin: nth($margin, 3);
-        }
-        .item-see-more {
-            .paragraph-see-more {
-                margin: nth($margin, 3);
-                font-size: large;
-            }
-        }
-    }
 }
-/* End Mobile */
+/* End Media query - Mobile */
 
-/* Tablet */
+/* Media query - Tablet */
 @media only screen and (min-width: 481px) and (max-width: 1078px) {
     h1 {
-        font-size: xxx-large;
-        word-break: break-all;
-        // font-size: calc(4em + 1vw)
+        font-size: nth($font-size, 2);
     }
 
     h2, .title-our-clients {
-        font-size: xxx-large;
+        font-size: 4.5rem;
     }
 
-    .contacts {
-        justify-content: center;
+    .container-header {
+        .navbar {
+            .container-fluid {
+                .navbar-collapse {
+                    margin: 0 6%;
+                    justify-content: right;
+                    .navbar-nav li {
+                        margin: 0 1%;
+                        .nav-link {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 
+    .container-paragraph {
+        iframe {
+            height: 100%;
+            width: 100%;
+            margin: nth($margin, 4);
+        }
+        .paragraph-shipping {
+            flex-basis: 100%;
+            margin: 0 3%;
+        }
+    }
+
+    .container-cards {
+        .card {
+            margin: nth($margin, 4);
+        }
+    }
 
     #contacts {
         .container-contacts {
             .img-contacts {
+                .img-contacts {
+                    height: 100%;
+                    width: 100%;
+                }    
                 h2 {
                     font-size: calc(3em + 1vw)
                 }
             }
         }
     }  
-
-    .card {
-        margin: nth($margin, 4);
-        width: 100%;
-    }
-
-    iframe {
-        height: 100%;
-        width: 100%;
-        margin: 2%;
-    }
 
     footer {
         .container-footer {
@@ -182,5 +238,4 @@
         }        
     }
 }
-/* End Tablet */
-/* End Media query */
+/* End Media query - Tablet */

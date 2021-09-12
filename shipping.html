@@ -130,7 +130,7 @@
     <!-- End Section - Deliveries -->
 
     <!-- Section - Covid 19 -->
-    <section class="tarriff">
+    <section class="tarriff symptoms">
         <h2 class="title-tariff">Cuidados principales</h2>
         <div class="container-covid">
             <div class="item-covid">
@@ -172,7 +172,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="symptoms">
         <h2>S&iacute;ntomas</h2>
         <div class="container-covid">
             <div class="item-covid">
@@ -221,11 +221,22 @@
             </div>
             <div class="container-form">
                 <form class="contacts-form" action="" method="POST" autocomplete="on">
-                    <input type="text" name="first-name" id="first-name" placeholder="Ingres&aacute; tu nombre">
-                    <input type="text" name="first-surname" id="first-surname" placeholder="Ingres&aacute; tu apellido">
-                    <input type="email" name="user-email" id="user-email" placeholder="Ingres&aacute; tu email">
-                    <input type="tel" name="phone" id="phone" placeholder="Ingres&aacute; tu n&uacute;mero de tel&eacute;fono">
-                    <textarea name="form-text" id="form-text" cols="30" rows="5" placeholder="Estamos para ayudarte, dejanos tu consulta."></textarea>
+                    <div class="form-group">
+                        <img class="icon-form" src="img/user.svg" alt="user" >
+                        <input type="text" name="user" id="user" placeholder="Nombre y Apellido">                        
+                    </div>
+                    <div class="form-group">
+                        <img class="icon-form" src="img/envelope.svg" alt="envelope">
+                        <input type="email" name="user-email" id="user-email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <img class="icon-form" src="img/call.svg" alt="call">
+                        <input type="tel" name="phone" id="phone" placeholder="Tel&eacute;fono">
+                    </div>
+                    <div class="form-group">
+                        <img class="icon-form" src="img/comment.svg" alt="comment">
+                        <textarea name="form-text" id="form-text" cols="30" rows="5" placeholder="Estamos para ayudarte, dejanos tu consulta."></textarea>
+                    </div>
                     <input type="submit" value="Enviar">
                 </form>
             </div>

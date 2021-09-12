@@ -20,11 +20,10 @@
     text-transform: $text-transform;
 }
 
-@mixin input($border, $border-radius, $box-sizing, $margin, $line-height, $padding, $width-input) {
+@mixin input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input) {
     border: $border;
     border-radius: $border-radius;
     box-sizing: $box-sizing;
-    margin: nth($margin, 4);
     line-height: $line-height;
     padding: $padding;
     width: $width-input;

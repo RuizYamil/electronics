@@ -6,11 +6,16 @@ const totalPrice = document.getElementById('total-price')
 
 const emptyButton = document.getElementById('empty-shopping-cart')
 
-const shoppingCart = []
+// Load storage
+document.addEventListener('DOMContentLoaded', () => {
+    shoppingCart = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCart();
+})
 
 // Empty cart
 emptyButton.addEventListener('click', () => {
     shoppingCart.length = 0
+    localStorage.setItem('cart', JSON.stringify(shoppingCart))
     updateCart()
 })
 
@@ -46,6 +51,7 @@ showProducts(stockProducts)
 // Add items to cart
 const addToCart = (prodId) => {
     const item = stockProducts.find( (prod) => prod.id === prodId)
+    localStorage.setItem('cart', JSON.stringify(shoppingCart))
     shoppingCart.push(item)
     updateCart()
 }
@@ -54,6 +60,7 @@ const addToCart = (prodId) => {
 const removeCart = (prodId) => {
     const item = shoppingCart.find( (prod) => prod.id === prodId )
     const indice = shoppingCart.indexOf(item)
+    localStorage.setItem('cart', JSON.stringify(shoppingCart))
     shoppingCart.splice(indice, 1)
     updateCart()
 }
@@ -61,7 +68,7 @@ const removeCart = (prodId) => {
 // Update cart items
 const updateCart = () => {
     containerShoppingCart.innerHTML = ""
-
+    localStorage.setItem('cart', JSON.stringify(shoppingCart))
     shoppingCart.forEach( (prod) => {
         const div = document.createElement('div')
         div.className = "productInShoppingCart"

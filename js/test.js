@@ -102,8 +102,24 @@ const updateCart = () => {
     totalPrice.innerText = shoppingCart.reduce((acc, prod) => acc + prod.price, 0)
 }
 
+$('#offers').prepend(`
+    <button id="fadein">Mostrar</button>   
+`)
+
+$('#offers').prepend(`
+    <button id="fadeout">Ocultar</button>   
+`)
+
+$('#fadein').click(()=>{
+    $('h2').fadeIn(2000)
+})
+
+$('#fadeout').click(()=>{
+    $('h2').fadeOut(4000)
+})
+
 // jQuery
-$('#button').css({
+$('#button, #fadein, #fadeout').css({
     'border': 'none',
     'background-color': '#05297f',
     'border-radius': '49px',
@@ -112,17 +128,17 @@ $('#button').css({
     'font-size': '1.5rem',
     'line-height': 'normal',
     'padding': '15px 20px',
-    'margin-left': '50%'
+    'margin-left': '50%',
+    'margin-top': '2%'
 })
 
 $('body').prepend('<h3 class="title">Agregando titulo</h3>')
 $('.title').html('<h3>Modificar titulo</h3>')
-// $('body').html('<div class="spinner-border text-primary"></div>')
-
 
 const toggleClick = () => {
     $('#container-cards').toggle()
 }
+
 
 $('#button').click(toggleClick)
 
@@ -130,3 +146,27 @@ $('#button').click(toggleClick)
 $(window).on("load", function() {
     $(".loader-container").fadeOut(1000)
 })
+
+$('#button').animate({
+    'width': '15%',
+    'height': '20%',
+    'border-radius': '50%'
+}, 2000)
+.delay(1000)
+.slideUp(500)
+.fadeIn(1500)
+.delay(2000)
+.animate({
+    'width': '10%',
+    'height': '15%',
+    'border-radius': '0%',
+    'opacity': '0.3'
+}, 3000)
+.fadeOut(300)
+.slideDown(5000)
+.animate({
+    'width': '12%',
+    'height': '10%',
+    'opacity': '1',
+    'border-radius': '49px'
+}, 2000)

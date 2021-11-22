@@ -13,7 +13,7 @@ modalCart.innerHTML = `
             </div>
             <p class="product-price">Precio total: $<span id="total-price">0</span></p>
             <button id="empty-shopping-cart" class="add-button">Vaciar carrito</button>
-            <button id="end-purchase" class="add-button" onclick=finalizarCompra()>Finalizar compra</button>
+            <button id="end-purchase" class="add-button">Finalizar compra</button>
 `    
 modalCarts.appendChild(modalCart);
 
@@ -24,7 +24,12 @@ const counterCart = document.getElementById('counter-shopping-cart')
 const totalPrice = document.getElementById('total-price')
 
 const emptyButton = document.getElementById('empty-shopping-cart')
-// const endPurchase = document.getElementById('end-purchase')
+const endPurchase = document.getElementById('end-purchase')
+
+// Llamar a MercadoPago
+endPurchase.addEventListener('click', () => {
+    mercadoPago()
+})
 
 // Load storage
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,6 +42,14 @@ emptyButton.addEventListener('click', () => {
     shoppingCart.length = 0
     localStorage.setItem('cart', JSON.stringify(shoppingCart))
     updateCart()
+    Toastify({
+        text: "El carrito está vacío",
+        duration: 3000,
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            fontSize: "1.7rem",
+          },
+        }).showToast();
 })
 
 // Stock of products
@@ -74,6 +87,14 @@ const addToCart = (prodId) => {
     localStorage.setItem('cart', JSON.stringify(shoppingCart))
     shoppingCart.push(item)
     updateCart()
+    Toastify({
+        text: "El producto se ha agregado al carrito",
+        duration: 1000,
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+            fontSize: "1.7rem",
+          },
+        }).showToast();
 }
 
 // Remove items from cart
@@ -109,34 +130,33 @@ const updateCart = () => {
 }
 
 // MercadoPago
-const finalizarCompra = async () => {
+const mercadoPago = async () => {
 
-    const carritoToMP = shoppingCart.map( (prod) => {
+    const cartMP = shoppingCart.map( (prod) => {
         return {
             title: prod.title,
             description: "",
-            picture_url: "",
+            picture_url: prod.productImg,
             category_id: prod.id,
-            quantity: "",
+            quantity: 1,
             currency_id: "ARS",
             unit_price: prod.price
         }
     })
 
     const resp = await fetch('https://api.mercadopago.com/checkout/preferences', {
-                                method: 'POST',
-                                headers: {
-                                    Authorization: 'Bearer TEST-5190265831169154-112123-505bf5ab840ad98ca81b161896e750bb-201471801'
-                                },
-                                body: JSON.stringify({
-                                    items: carritoToMP,
-                                    back_urls: {
-                                        success: window.location.href,
-                                        failure: window.location.href
-                                    }
-                                })
-                            })
+        method: 'POST',
+        headers: {
+            Authorization: 'Bearer TEST-5190265831169154-112123-505bf5ab840ad98ca81b161896e750bb-201471801'
+        },
+        body: JSON.stringify({
+            items: cartMP,
+            back_urls: {
+                success: window.location.href,
+                failure: window.location.href
+            }
+        })
+    })
     const data = await resp.json()
-    
     window.location.replace(data.init_point)
 }

@@ -4,7 +4,7 @@ const header = document.createElement('nav');
 header.classList = "navbar navbar-expand-lg navbar-light bg-light"
 header.innerHTML = `
     <div class="container-fluid">
-        <a href="offers.html"><img class="logo" src="img/logo.png" alt="logo"></a>
+        <a href="index.html"><img class="logo" src="img/logo.png" alt="logo"></a>
         <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,14 +37,12 @@ header.innerHTML = `
                     <a class="nav-link" href="contacts.html">Contacto</a>
                 </li>
             </ul>
-            <div>
-                <button id="button-shopping-cart"><i class="fas fa-shopping-cart"></i><span id="counter-shopping-cart">0</span></button>
+            <div class="btn-shopping-cart">
             </div>
         </div>
     </div>
 `
 headers.appendChild(header);
-
 
 // Contacts form
 const contactsForm = document.querySelector('#contacts');

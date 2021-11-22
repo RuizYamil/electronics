@@ -8,6 +8,7 @@ Es el nexo entre los fabricantes ubicados en el exterior y los clientes. Se pued
 
 * [HTML](https://www.w3.org/) - Lenguaje de etiquetas
 * [CSS](https://www.w3.org/) - Hojas de estilos
+* [JS](https://www.w3.org/) - Lenguaje de programación
 * [BOOTSTRAP](https://getbootstrap.com/) - Framework CSS
 * [SASS](https://sass-lang.com/) - Procesador CSS
 * [GIT](https://git-scm.com/) - Sistema de control de versiones

@@ -1,16 +1,21 @@
-// Ready
-$(document).ready(() => {
-    console.log("Se cargo el DOM")
+// Cart button
+const cartIcon = document.querySelector(".btn-shopping-cart");
+cartIcon.innerHTML = '<button id="button-shopping-cart"><i class="fas fa-shopping-cart"></i><span id="counter-shopping-cart">0</span></button>';
 
-    setTimeout(() => {
-        confirm('Ya se cargo el DOM')
-    }, 1000)
-    
-})
-
-// $('#button-shopping-cart').css('color', 'blue')
-$('div.product-title').css('font-weight', 'bold')
-
+// Modal Cart
+const modalCarts = document.querySelector('.container-modal');
+const modalCart = document.createElement('div');
+modalCart.classList = "modal-shopping-cart"
+modalCart.innerHTML = `
+            <h3>Carrito</h3>
+            <button id="close-shopping-cart"><i class="fas fa-times-circle"></i></button>
+            <div id="container-shopping-cart">
+            </div>
+            <p class="product-price">Precio total: $<span id="total-price">0</span></p>
+            <button id="empty-shopping-cart" class="add-button">Vaciar carrito</button>
+            <button id="end-purchase" class="add-button" onclick=finalizarCompra()>Finalizar compra</button>
+`    
+modalCarts.appendChild(modalCart);
 
 const containerProducts = document.querySelector('.container-cards');
 const containerShoppingCart = document.getElementById('container-shopping-cart')
@@ -19,6 +24,7 @@ const counterCart = document.getElementById('counter-shopping-cart')
 const totalPrice = document.getElementById('total-price')
 
 const emptyButton = document.getElementById('empty-shopping-cart')
+// const endPurchase = document.getElementById('end-purchase')
 
 // Load storage
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,71 +108,35 @@ const updateCart = () => {
     totalPrice.innerText = shoppingCart.reduce((acc, prod) => acc + prod.price, 0)
 }
 
-$('#offers').prepend(`
-    <button id="fadein">Mostrar</button>   
-`)
+// MercadoPago
+const finalizarCompra = async () => {
 
-$('#offers').prepend(`
-    <button id="fadeout">Ocultar</button>   
-`)
+    const carritoToMP = shoppingCart.map( (prod) => {
+        return {
+            title: prod.title,
+            description: "",
+            picture_url: "",
+            category_id: prod.id,
+            quantity: "",
+            currency_id: "ARS",
+            unit_price: prod.price
+        }
+    })
 
-$('#fadein').click(()=>{
-    $('h2').fadeIn(2000)
-})
-
-$('#fadeout').click(()=>{
-    $('h2').fadeOut(4000)
-})
-
-// jQuery
-$('#button, #fadein, #fadeout').css({
-    'border': 'none',
-    'background-color': '#05297f',
-    'border-radius': '49px',
-    'color': 'white',
-    'font-family': 'Arial, Helvetica, sans-serif',
-    'font-size': '1.5rem',
-    'line-height': 'normal',
-    'padding': '15px 20px',
-    'margin-left': '50%',
-    'margin-top': '2%'
-})
-
-$('body').prepend('<h3 class="title">Agregando titulo</h3>')
-$('.title').html('<h3>Modificar titulo</h3>')
-
-const toggleClick = () => {
-    $('#container-cards').toggle()
+    const resp = await fetch('https://api.mercadopago.com/checkout/preferences', {
+                                method: 'POST',
+                                headers: {
+                                    Authorization: 'Bearer TEST-5190265831169154-112123-505bf5ab840ad98ca81b161896e750bb-201471801'
+                                },
+                                body: JSON.stringify({
+                                    items: carritoToMP,
+                                    back_urls: {
+                                        success: window.location.href,
+                                        failure: window.location.href
+                                    }
+                                })
+                            })
+    const data = await resp.json()
+    
+    window.location.replace(data.init_point)
 }
-
-
-$('#button').click(toggleClick)
-
-
-$(window).on("load", function() {
-    $(".loader-container").fadeOut(1000)
-})
-
-$('#button').animate({
-    'width': '15%',
-    'height': '20%',
-    'border-radius': '50%'
-}, 2000)
-.delay(1000)
-.slideUp(500)
-.fadeIn(1500)
-.delay(2000)
-.animate({
-    'width': '10%',
-    'height': '15%',
-    'border-radius': '0%',
-    'opacity': '0.3'
-}, 3000)
-.fadeOut(300)
-.slideDown(5000)
-.animate({
-    'width': '12%',
-    'height': '10%',
-    'opacity': '1',
-    'border-radius': '49px'
-}, 2000)

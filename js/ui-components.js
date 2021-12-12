@@ -19,19 +19,9 @@ header.innerHTML = `
                 <li class="nav-item">
                     <a class="nav-link" href="shipping.html">Env&iacute;os</a>
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="products.html">Productos</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="products.html#resistors">Resistencias</a></li>
-                        <li><a class="dropdown-item" href="products.html#transistors">Transistores</a></li>
-                        <li><a class="dropdown-item" href="products.html#capacitors">Capacitores</a></li>
-                        <li><a class="dropdown-item" href="products.html#cable">Cables</a></li>
-                        <li><a class="dropdown-item" href="products.html#diode">Diodos</a></li>
-                        <li><a class="dropdown-item" href="products.html#batteries">Pilas</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="offers.html">Ofertas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contacts.html">Contacto</a>
@@ -54,7 +44,7 @@ contacts.innerHTML = `
         <h2>Cont&aacute;ctanos</h2>
     </div>
     <div class="container-form">
-        <form class="contacts-form" action="" method="POST" autocomplete="on">
+        <form class="contacts-form" action="/" method="POST" autocomplete="on" id="contacts-form">
             <div class="form-group">
                 <img class="icon-form" src="img/user.svg" alt="user" >
                 <input type="text" name="user" id="user" placeholder="Nombre y Apellido">                        
@@ -71,12 +61,57 @@ contacts.innerHTML = `
                 <img class="icon-form" src="img/comment.svg" alt="comment">
                 <textarea name="form-text" id="form-text" cols="30" rows="5" placeholder="Estamos para ayudarte, dejanos tu consulta."></textarea>
             </div>
-            <input type="submit" value="Enviar">
+            <div class="msg"></div>
+            <button type="submit">Enviar</button>
         </form>
     </div>
 `
 contactsForm.appendChild(contacts);
 
+
+// Validations in the form
+const user = document.getElementById('user')
+const email = document.getElementById('user-email')
+const phone = document.getElementById('phone')
+
+document.addEventListener("DOMContentLoaded", function() { 
+    document.getElementById('contacts-form').addEventListener('submit', validation)
+});
+
+function validation(e) {
+    e.preventDefault();
+    let msg = document.getElementsByClassName('msg')[0];
+    msg.innerText = '';
+    if(user.value == '' && email.value == '' && phone.value == ''){
+        for(let i = 0; i < element.length; i++){
+            element[i].style.border = '2px solid red';
+        }
+        msg.innerText = 'Debes completar los campos obligatorios';
+    }else if(user.value == ''){
+        user.style.border = '2px solid red';
+        msg.innerText = 'Debes escribir un nombre';
+    }else if(email.value == ''){
+        email.style.border = '2px solid red';
+        msg.innerText = 'Debes escribir un email';
+    }else if(phone.value == ''){
+        phone.style.border = '2px solid red';
+        msg.innerText = 'Debes ingresar un número de teléfono'
+    }else{
+        msg.innerText = 'El formulario se envió correctamente';
+        msg.style.color = 'green'
+        clean();
+    }
+}
+
+// Clean form
+var element = document.getElementsByTagName('input');
+
+function clean() {
+    for(let i = 0; i < element.length; i++){
+        element[i].value = '';
+        element[i].style.border = '1px solid #ccc';
+    }
+}
 
 // Footer
 const footers = document.querySelector('.footer');

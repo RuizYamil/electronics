@@ -50,7 +50,8 @@
             font-size: nth($font-size ,6);
             @include input($border, $border-radius, $box-sizing, $line-height, $padding, $width-input);
         }
-        input[type=submit] { 
+        @extend %message;
+        button[type=submit] { 
             @extend %submit;
             &:hover {
                 background-color:  #23489e; 

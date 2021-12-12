@@ -5,33 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Las productos destacados en nuestra tienda ecommerce se podrán ver 
-    cada semana en esta sección.">
+    <meta name="description" content="Las ofertas destacadas en nuestra tienda ecommerce se podrán ver 
+    cada semana en esta sección. Las ofertas serán válidas hasta agotar el stock de los componentes electrónicos.">
     <meta name="keywords" content="Electrónica, Componentes, Circuitos, Semiconductores, Transistores, 
     Jfet, Bipolar, Mosfet, Potencia, Diodos, Potencia, Leds, Zener, Rectificador, Resistencias, Carbon, 
     Ceramica, Presets, Potenciómetros, Capacitores, Cerámicos, Poliéster, Electrolítico, Mica-plata Cables, 
-    Coaxil, Unipolar, Red, Pilas, Alcalinas, Recargables, Portapilas, Herramientas, Microcontroladores, Pinzas, Productos">
+    Coaxil, Unipolar, Red, Pilas, Alcalinas, Recargables, Portapilas, Herramientas, Microcontroladores, Pinzas, Ofertas semanales">
     <meta name="copy" content="Electronics">
     <meta name="author" content="Alan Ruiz">
 
     <!-- Open graph -->
     <meta property="og:title" content="Componentes electrónicos">
-    <meta property="og:descripcion" content="Las productos destacados en nuestra tienda ecommerce se podrán ver 
-    cada semana en esta sección.">
+    <meta property="og:descripcion" content="Aprovechen las ofertas semanales, contamos con muchos descuentan los días viernes.">
     <meta property="og:site_name" content="Electronics">
     <meta property="og:image" content="img/logo_blue.png">
     <meta property="og:locale" content="es ES">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- JS Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
 
-    <title>Componentes Electr&oacute;nicos Electronics – Productos</title>
+    <!-- Toastify CSS and JS-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Cart -->
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Componentes Electr&oacute;nicos Electronics – Ofertas</title>
 </head>
 <body>
     <!-- Header -->
@@ -41,599 +55,22 @@
 
     <!-- Section - Title -->
     <section>
-        <h1>Productos</h1>
-        <video autoplay muted loop id="video" title="products">
-            <source src="video/background.mp4" type="video/mp4">
-        </video>
+        <h1>Ofertas</h1>
     </section>
     <!-- End Section - Title -->
 
-    <!-- Section - Featured Products -->
-    <section>
-        <h2>Productos destacados</h2>
-        <div class="container-cards">
-            <div class="card">
-                <img class="rating" src="img/five-rating.png" alt="rating">
-                <img class="product-img" src="img/carbon_resistors.png" alt="carbon resistors">
-                <h3>Resistencias</h3>
-                <p class="simple-price">$1000</p>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="rating" src="img/five-rating.png" alt="rating">
-                <img class="product-img" src="img/transistors.png" alt="transistors">
-                <h3>Transistores</h3>
-                <p class="simple-price">$1500</p>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="rating" src="img/five-rating.png" alt="rating">
-                <img class="product-img" src="img/diode.png" alt="diode">
-                <h3>Diodos</h3>
-                <p class="simple-price">$2000</p>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="rating" src="img/five-rating.png" alt="rating">
-                <img class="product-img" src="img/tools.png" alt="tools">
-                <h3>Herramientas</h3>
-                <p class="simple-price">$1700</p>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
+    <!-- Section - Featured offers -->
+    <section id="offers">
+        <h2>Ofertas Destacadas</h2>
+        <div data-aos="fade-right" class="container-cards">
         </div>
     </section>
-    <!-- End Section - Featured Products -->
-  
-    <!-- Modal Products -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title w-100 text-center" id="staticBackdropLabel">Modal title</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="paragraph-modal">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius aliquid veniam, 
-                        magnam recusandae laudantium impedit neque temporibus, similique, iusto repellendus 
-                        nam quibusdam rerum illum illo? Quidem non nemo nam!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius aliquid veniam, 
-                        magnam recusandae laudantium impedit neque temporibus, similique, iusto repellendus 
-                        nam quibusdam rerum illum illo? Quidem non nemo nam!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius aliquid veniam, 
-                        magnam recusandae laudantium impedit neque temporibus, similique, iusto repellendus 
-                        nam quibusdam rerum illum illo? Quidem non nemo nam!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius aliquid veniam, 
-                        magnam recusandae laudantium impedit neque temporibus, similique, iusto repellendus 
-                        nam quibusdam rerum illum illo? Quidem non nemo nam!
-                    </p>
-                </div>
-                <div class="modal-footer mx-auto">
-                    <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
+    <!-- End Section - Featured Offers -->
+
+    <!-- Modal shopping cart -->
+    <div class="container-modal">
     </div>
-    <!-- End Modal Products -->
-
-
-    <!-- Section - Resistors -->
-    <section id="resistors">
-        <h2>Resistencias</h2>
-        <div class="container-cards">
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Carb&oacute;n</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/carbon_resistors.png" alt="carbon resistors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-one">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Cer&aacute;mica</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/ceramic_resistors.png" alt="ceramic resistors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-two">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Presets</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/preset.png" alt="preset">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-three">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section - Resistors -->
-
-    <!-- Section - Transistors -->
-    <section id="transistors">
-        <h2>Transistores</h2>
-        <div class="container-cards">
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Jfet</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/jfet_transistors.png" alt="jfet transistors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-four">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Bipolar</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/bipolar_transistors.png" alt="bipolar transistors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-five">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Mosfet</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/mosfet_transistors.png" alt="mosfet transistors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-six">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Potencia</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/power_transistors.png" alt="power transistors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-seven">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section - Transistors -->
-
-    <!-- Section - Capacitors -->
-    <section id="capacitors">
-        <h2>Capacitores</h2>
-        <div class="container-cards">
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Cer&aacute;micos</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/ceramic_capacitors.png" alt="ceramic capacitors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-eight">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Poli&eacute;ster</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/polyester_capacitors.png" alt="polyester capacitors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-nine">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Electrol&iacute;tico</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/electrolytic_capacitors.png" alt="electrolytic capacitors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-ten">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Mica - Plata</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/mica_silver_capacitors.png" alt="mica and silver capacitors">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-eleven">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section - Capacitors -->
-
-    <!-- Section - Cable-->
-    <section id="cable">
-        <h2>Cables</h2>
-        <div class="container-cards">
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Coaxil</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/coaxil_cable.png" alt="coaxil cable">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-twelve">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Unipolar</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/unipolar_cable.png" alt="unipolar cable">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-thirteen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Red</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/network_cable.png" alt="network cable">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-fourteen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section - Cable -->
-
-    <!-- Section - Diode -->
-    <section id="diode">
-        <h2>Diodos</h2>
-        <div class="container-cards">
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Potencia</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/power_diode.png" alt="power diode">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-fifteen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Zener</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/zener_diode.png" alt="zener diode">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-sixteen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Led</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/led_diode.png" alt="led diode">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-seventeen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Rectificador</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/rectifier_diode.png" alt="rectifier diode">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-eighteen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section - Diode -->
-
-    <!-- Section - Batteries -->
-    <section id="batteries">
-        <h2>Pilas</h2>
-        <div class="container-cards">
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Alcalinas</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/alkaline_batteries.png" alt="alkaline batteries">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-nineteen">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Recargables</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/rechargeable_batteries.png" alt="rechargeable batteries">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-twenty">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="title-icon">
-                    <h3>Portapilas</h3>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <img class="icon-question" src="img/question-mark.png" alt="question">
-                    </button>
-                </div>
-                <img class="product-img" src="img/battery_holder.png" alt="battery holder">
-                <div class="paragraph-price">
-                    <p class="price">$1000</p>
-                    <select name="amount" id="amount-twenty-one">
-                        <option value="amount-default" selected>Cantidad</option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                </div>
-                <div class="btn-add-to-cart">
-                    <button>Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Section - Batteries -->
+    <!-- End Modal shopping cart -->
 
     <!-- Section - Contacts -->
     <section id="contacts">
@@ -652,6 +89,11 @@
 
     <!-- JS File -->
     <script defer src="js/ui-components.js"></script>
+    <script defer src="js/stock.js"></script>
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/modal.js"></script>
     <!-- End JS File -->
+
+    <script>AOS.init();</script>
 </body>
 </html>

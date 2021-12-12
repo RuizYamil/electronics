@@ -67,7 +67,8 @@
                         padding-left: 15%;
                     }           
                 }
-                input[type=submit] { 
+                @extend %message;
+                button[type=submit] { 
                     @extend %submit;
                     &:hover {
                         background-color:  #23489e; 

@@ -12,8 +12,10 @@ modalCart.innerHTML = `
             <div id="container-shopping-cart">
             </div>
             <p class="product-price">Precio total: $<span id="total-price">0</span></p>
-            <button id="empty-shopping-cart" class="add-button">Vaciar carrito</button>
-            <button id="end-purchase" class="add-button">Finalizar compra</button>
+            <div class="button-modal">
+                <button id="empty-shopping-cart" class="add-button">Vaciar carrito</button>
+                <button id="end-purchase" class="add-button">Finalizar compra</button>
+            </div>
 `    
 modalCarts.appendChild(modalCart);
 
@@ -58,7 +60,7 @@ const showProducts = (array) => {
 
     array.forEach((product) => {
         const div = document.createElement('div');
-        div.classList = `${product.class}`
+        div.classList.add('card');
         div.innerHTML = `
             <img src=${product.rating} class="rating" alt="rating">
             <img src=${product.productImg} class="product-img" alt="${product.alt}">
@@ -114,8 +116,8 @@ const updateCart = () => {
         const div = document.createElement('div')
         div.className = "productInShoppingCart"
         div.innerHTML = `
-                    <p class="product-title-modal">Producto: ${prod.title}</p>
-                    <p class="price-modal">Precio: $${prod.price}</p>
+                    <p class="product-title-modal"><b>Producto:</b> ${prod.title}</p>
+                    <p class="price-modal"><b>Precio:</b> $${prod.price}</p>
                     <button id="remove-cart${prod.id}" class="delete-button"><i class="fas fa-trash-alt"></i></button>
                 `
         containerShoppingCart.appendChild(div)
